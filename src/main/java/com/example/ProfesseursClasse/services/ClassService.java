@@ -15,17 +15,17 @@ public class ClassService {
     private ClassRepository classRepository;
     private List<Classe> cla = new ArrayList<>();
 
-    public ClassService(ClassRepository classRepository, Classe classe) {
+    public ClassService(ClassRepository classRepository) {
         this.classRepository = classRepository;
 
     }
   //lister toutes les classes
-    public List<Classe> getAllClass(Long id)
+    public List<Classe> getAllClass()
     {
         return classRepository.findAll();
     }
    //Obtenir une classe par son ID
-   public Classe getClassByID(Long id) {
+   public Classe getClassById(Long id) {
        return classRepository.findById(id)
                .orElseThrow(
                        ()-> new IllegalArgumentException("la classe " +id+" non trouvable")

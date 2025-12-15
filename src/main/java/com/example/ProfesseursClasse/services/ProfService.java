@@ -35,7 +35,7 @@ public class ProfService {
         return profRepository.save(professeur);
     }
    //modifier un prof
-    public Professeur modifyProf(Professeur p)
+    public Professeur modifierProf(Professeur p)
     {
      return profRepository.save(p);
     }
