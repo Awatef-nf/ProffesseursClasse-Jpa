@@ -14,20 +14,19 @@ public class Classe {
     private int nombreEleves;
 
     @ManyToOne
-    @JoinColumn(name= "professeur")
+    @JoinColumn(name= "professeur_id")
     @JsonBackReference
     private Professeur professeur;
 
     public Classe() {
     }
 
-    public Classe(Long id, Professeur professeur, int nombreEleves, String matière, String niveau, String nom) {
-        this.id = id;
-        this.professeur = professeur;
+    public Classe(int nombreEleves, String matière, String niveau, String nom,Professeur professeur) {
         this.nombreEleves = nombreEleves;
         this.matière = matière;
         this.niveau = niveau;
         this.nom = nom;
+        this.professeur=professeur;
     }
 
     public String getNom() {
@@ -68,5 +67,14 @@ public class Classe {
 
     public void setProfesseur(Professeur professeur) {
         this.professeur = professeur;
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

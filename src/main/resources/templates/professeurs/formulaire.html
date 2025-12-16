@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" th:href="@{/css/Prof.css}">
+</head>
+<body>
+
+<form th:action="${professeur.id == null ? '/professeurs/nouveau' : '/professeurs/' + professeur.id + '/modifier'}"
+      th:object="${professeur}"
+      method="post"
+      class="prof-form">
+
+    <h2 th:text="${professeur.id == null ? 'Nouveau Professeur' : 'Modifier'}"></h2>
+
+    <div class="form-grid">
+
+        <!-- Nom -->
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text"
+                   th:field="*{nom}"
+                   id="nom"
+                   placeholder="nom"
+                   required>
+        </div>
+
+        <!-- Prenom -->
+        <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text"
+                   th:field="*{prenom}"
+                   id="prenom"
+                   placeholder="prenom"
+                   required>
+        </div>
+        <!-- Email-->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text"
+                   th:field="*{email}"
+                   id="email"
+                   placeholder="email"
+                   required>
+        </div>
+
+        <!-- ACTIONS -->
+
+        <div>
+            <button type="submit">Enregistrer</button></div>
+        <div>
+            <a href="/"><button>Annuler</button></a>
+        </div>
+
+
+    </div>
+</form>
+
+</body>
+</html>

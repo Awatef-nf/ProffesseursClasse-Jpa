@@ -12,8 +12,8 @@ import java.util.List;
 public class ProfService {
 
 
-     private ProfRepository profRepository;
-    private List<Professeur> prof = new ArrayList<>();
+    private ProfRepository profRepository;
+    private List<Professeur> listeProfesseur = new ArrayList<>();
 
     public ProfService(ProfRepository profRepository) {
         this.profRepository = profRepository;
@@ -40,7 +40,7 @@ public class ProfService {
      return profRepository.save(p);
     }
     //effacer un prof
-    public void effacerProfById(Long id )
+    public void supprimerProfById(Long id )
     {
        profRepository.deleteById(id);
     }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>gestion des professeurs</title>
+    <link rel="stylesheet" th:href="@{/css/Prof.css}">
+</head>
+<header>
+
+    <div class="prof-form">
+        <h1 id="prof">Gestion des professeurs</h1>
+        <a href="/professeurs/nouveau">Créer un professeurs</a>
+    </div>
+</header>
+
+
+<div class="prof-form">
+    <div>
+        <div class="prof-form">
+            <h1 id="profdispo">Liste des professeurs</h1>
+        </div>
+        <div>
+            <table class="prof-table" th:if="${!listeProfesseur.isEmpty()}">
+                <tr>
+                    <div><th>Nom</th></div>
+                    <div><th>Prenom</th></div>
+                    <div><th>email</th></div>
+                    <div><th>Actions</th></div>
+                </tr>
+                <tr th:each="professeur : ${listeProfesseur}">
+                    <td><a th:href="@{/professeurs/{id}(id=${professeur.id})}" th:text="${professeur.nom}"></a></td>
+                    <td th:text="${professeur.prenom}"></td>
+                    <td th:text="${professeur.email}"></td>
+                    <td>
+                        <a th:href="@{professeurs/{id}/modifier(id=${professeur.id})}"><button>Modifier</button></a>
+                        <a th:href="@{professeurs/{id}/supprimer(id=${professeur.id})}"><button>Supprimer</button></a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

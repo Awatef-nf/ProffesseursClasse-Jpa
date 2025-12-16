@@ -17,17 +17,24 @@ public class Professeur {
 
     @OneToMany(mappedBy = "professeur", cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Classe> classe = new ArrayList<>();
+    private List<Classe> classes = new ArrayList<>();
 
 
     public Professeur() {
     }
 
-    public Professeur(String nom, String prenom, String email, List<Classe> classe) {
+    public Professeur(String nom, String prenom, String email) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.classe = classe;
+    }
+
+    public List<Classe> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(List<Classe> classes) {
+        this.classes = classes;
     }
 
     public String getNom() {

@@ -1,0 +1,159 @@
+/* ================= BASE ================= */
+body {
+
+       /*background-image: url("/image/img.png")!important;*/
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-color: #1b5873;
+}
+
+
+.prof-form {
+    max-width: 700px;
+    margin: 60px auto;
+    background: #b2babf;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+
+/************lien********/
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+
+
+/* Groupes */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Labels */
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+/* Inputs & textarea */
+.form-group input,
+.form-group textarea {
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+/* Placeholder */
+::placeholder {
+    color: #9ca3af;
+}
+
+/* Textarea */
+.form-group textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* Focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+}
+
+/* ================= BOUTONS ================= */
+button {
+    background-color: #d2a37c;
+    color: black;
+    border: none;
+    padding: 3px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #ae9969;
+}
+
+
+/********la table*********/
+.prof-form h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #1f2937;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Labels */
+.prof-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+/***** table****/
+
+.prof-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.prof-table th {
+    text-align: left;
+    padding: 14px;
+    border-bottom: 2px solid;
+}
+
+.prof-table td {
+    padding: 14px;
+    border-bottom: 1px solid;
+}
+
+.prof-table button {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+.prof-table td:nth-child(3) {
+
+    font-size: 14px;
+}
+/****nom***/
+.prof-nom {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+/* email */
+.prof-email p {
+    line-height: 1.8;
+}
+
+
+.prof-detail {
+    max-width: 800px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
