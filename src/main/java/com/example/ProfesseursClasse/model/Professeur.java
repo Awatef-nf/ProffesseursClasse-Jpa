@@ -10,7 +10,7 @@ import java.util.List;
 public class Professeur {
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
     private String nom;
     private String prenom;
     private String email;
@@ -61,11 +61,11 @@ public class Professeur {
         this.email = email;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>gestion des classes</title>
-    <link rel="stylesheet" th:href="@{/css/Class.css}">
+    <link rel="stylesheet" th:href="@{/css/Prof.css}">
 </head>
 <body>
 <header>
-    <h1>Gestion des classes</h1>
 
+    <div class="prof-form">
+        <h1 id="prof">Gestion des classes</h1>
+        <a href="/classes/nouveau">Créer une classe</a>
+
+    </div>
 </header>
 
 
+<div class="prof-form">
+    <div>
+        <div class="prof-form">
+            <h1 id="classedispo">Liste des Classes</h1>
+        </div>
+        <div>
+            <table class="prof-table" th:if="${!listeClass.isEmpty()}">
+                <tr>
+                <div><th>Identifiant</div>
+                <div><th>Nombre d'éleves</div>
+                <div><th>Matière</th></div>
+                <div><th>Niveau</th></div>
+                <div><th>Nom</th></div>
+                </tr>
+                <tr th:each="classe : ${listeClass}">
+                    <td><a th:text="${classe.id}"></a></td>
+                    <td><a th:text="${classe.nombreEleves}"></a></td>
+                    <td><a th:text="${classe.matière}"></a></td>
+                    <td><a th:text="${classe.niveau}"></a></td>
+                    <td><a th:text="${classe.nom}"></a></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
 </body>
+
 </html>

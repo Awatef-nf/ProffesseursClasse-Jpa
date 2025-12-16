@@ -70,7 +70,7 @@ public class ProfController {
   //effacer un professeur
 
     @GetMapping("/{id}/supprimer")
-    public String supprimerProf(@PathVariable Long id) {
+    public String supprimerProf(@PathVariable int id) {
         profService.supprimerProfById(id);
         return "redirect:/professeurs";
     }

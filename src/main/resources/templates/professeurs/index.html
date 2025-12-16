@@ -10,6 +10,7 @@
     <div class="prof-form">
         <h1 id="prof">Gestion des professeurs</h1>
         <a href="/professeurs/nouveau">Créer un professeurs</a>
+        <a href="/classes">Voir les classes</a>
     </div>
 </header>
 
@@ -24,13 +25,15 @@
                 <tr>
                     <div><th>Nom</th></div>
                     <div><th>Prenom</th></div>
-                    <div><th>email</th></div>
+                    <div><th>Email</th></div>
+                    <div><th>Nbre Classe enseignées</th></div>
                     <div><th>Actions</th></div>
                 </tr>
                 <tr th:each="professeur : ${listeProfesseur}">
                     <td><a th:href="@{/professeurs/{id}(id=${professeur.id})}" th:text="${professeur.nom}"></a></td>
                     <td th:text="${professeur.prenom}"></td>
                     <td th:text="${professeur.email}"></td>
+                    <td></td>
                     <td>
                         <a th:href="@{professeurs/{id}/modifier(id=${professeur.id})}"><button>Modifier</button></a>
                         <a th:href="@{professeurs/{id}/supprimer(id=${professeur.id})}"><button>Supprimer</button></a>

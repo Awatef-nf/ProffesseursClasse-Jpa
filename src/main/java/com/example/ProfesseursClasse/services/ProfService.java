@@ -18,31 +18,40 @@ public class ProfService {
     public ProfService(ProfRepository profRepository) {
         this.profRepository = profRepository;
     }
-   //lister tous les professeurs
-    public List<Professeur> getAllProf()
-    {
+
+    //lister tous les professeurs
+    public List<Professeur> getAllProf() {
         return profRepository.findAll();
     }
 
     //obtenir un professeur par son id
-   public Professeur getProfById(Long id)
-   {
-       return profRepository.findById(id).get();
-   }
-   //creer un prof
-    public Professeur createNewProf(Professeur professeur)
-    {
+    public Professeur getProfById(Long id) {
+        return profRepository.findById(id).get();
+    }
+
+    //creer un prof
+    public Professeur createNewProf(Professeur professeur) {
         return profRepository.save(professeur);
     }
-   //modifier un prof
-    public Professeur modifierProf(Professeur p)
-    {
-     return profRepository.save(p);
+
+    //modifier un prof
+    public Professeur modifierProf(Professeur p) {
+        return profRepository.save(p);
     }
+
     //effacer un prof
-    public void supprimerProfById(Long id )
-    {
-       profRepository.deleteById(id);
+    public void supprimerProfById(int id) {
+        profRepository.deleteById(Long.valueOf(id));
     }
+
+   // nombre de classe du professeur
+
+
+
+
+    //nombre d'éléves
+
+
+
 
 }
