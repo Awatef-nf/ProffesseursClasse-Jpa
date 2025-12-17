@@ -2,6 +2,7 @@ package com.example.ProfesseursClasse.controller;
 
 import com.example.ProfesseursClasse.model.Classe;
 import com.example.ProfesseursClasse.services.ClassService;
+import com.example.ProfesseursClasse.services.ProfService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +12,13 @@ import org.springframework.web.bind.annotation.*;
 public class ClassController {
 
     private ClassService classService;
+    private ProfService profService;
 
-    public ClassController(ClassService classService) {
+    public ClassController(ClassService classService , ProfService profService) {
+        this.profService = profService;
         this.classService = classService;
     }
+
 
     //vue pour tt les classes
     @GetMapping
@@ -22,10 +26,12 @@ public class ClassController {
         model.addAttribute("listeClass", classService.getAllClass());
         return "/classes/index";
     }
+
     //formulaire de creation
     @GetMapping("/nouveau")
     public String getForm(Model model) {
         model.addAttribute("classe", new Classe());
+        model.addAttribute("professeur", profService.getAllProf());
         return "/classes/formulaire";
     }
 
@@ -33,7 +39,7 @@ public class ClassController {
     @PostMapping("/nouveau")
     public String ajouterUneClass(@ModelAttribute Classe classe, Model model) {
         classService.createNewClass(classe);
-        return "redirect:/classes/";
+        return "redirect:/classes";
     }
 
     //voir les details d une classe
@@ -48,9 +54,10 @@ public class ClassController {
         Classe classe = classService.getClassById(id);
         if (classe != null) {
             model.addAttribute("classe", classe);
+            model.addAttribute("professeur", profService.getAllProf());
             return "/classes/formulaire";
         }
-        return "redirect:/classes/";
+        return "redirect:/classes";
 
     }
 
@@ -58,15 +65,15 @@ public class ClassController {
     @PostMapping("/{id}/modifier")
     public String modifierClass(@ModelAttribute Classe classe) {
         classService.modifierClass(classe);
-        return "redirect:/classes/";
+        return "redirect:/classes";
     }
 
     //effacer une classe
 
-    @GetMapping("/{id}/delete")
+    @GetMapping("/{id}/suprimer")
     public String effacerClass(@PathVariable Long id) {
         classService.effacerClassById(id);
-        return "redirect:/classes/";
+        return "redirect:/classes";
     }
 
 }

@@ -40,16 +40,28 @@ public class ProfService {
     }
 
     //effacer un prof
-    public void supprimerProfById(int id) {
-        profRepository.deleteById(Long.valueOf(id));
+    public void supprimerProfById(Long id) {
+        profRepository.deleteById(id);
     }
 
    // nombre de classe du professeur
+    public int nbreClassProf(Long id)
+    {
+        Professeur nbClassPro = getProfById(id);
+        return nbClassPro.getClasses().size();
+    }
 
+    //nombre d'éléves par professeur
 
-
-
-    //nombre d'éléves
+    public int nbEleveProf (Long id)
+    {
+        int count =0;
+        Professeur nbElveProf = getProfById(id);
+        for(Classe classe : nbElveProf.getClasses() )
+        {
+            count += classe.getNombreEleves();
+        } return count;
+    }
 
 
 

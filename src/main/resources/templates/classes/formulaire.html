@@ -7,5 +7,83 @@
 </head>
 <body>
 
+<form th:action="${classe.id == null ? '/classes/nouveau' : '/classes/' + classe.id + '/modifier'}"
+      th:object="${classe}"
+      method="post"
+      class="prof-form">
+
+    <h2 th:text="${classe.id == null ? 'Nouvelle Classe' : 'Modifier'}"></h2>
+
+    <div class="form-grid">
+
+        <!-- Nom-->
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text"
+                   th:field="*{nom}"
+                   id="nom"
+                   placeholder="nom"
+                   required>
+        </div>
+
+        <!-- Niveau -->
+        <div class="form-group">
+            <label for="niveau">Niveau</label>
+            <input type="text"
+                   th:field="*{niveau}"
+                   id="niveau"
+                   placeholder="niveau"
+                   required>
+        </div>
+
+        <!-- Matière -->
+        <div class="form-group">
+            <label for="matière">Matière</label>
+            <select id="matière" name="matière"  required>
+                <option value="">-- Sélectionner une matière --</option>
+                <option value="Mathématiques" th:selected="${classe.matière == 'Mathématiques'}">Mathématiques</option>
+                <option value="Français" th:selected="${classe.matière == 'Français'}">Français</option>
+                <option value="Science" th:selected="${classe.matière == 'Science'}">Science</option>
+                <option value="Sport" th:selected="${classe.matière == 'Sport'}">Sport</option>
+                <option value="Historie" th:selected="${classe.matière == 'Historie'}">Histoire</option>
+            </select>
+        </div>
+
+        <!-- Nombre d'eleves-->
+        <div class="form-group">
+            <label for="nombreEleves">Nombre d'éléves</label>
+            <input type="text"
+                   th:field="*{nombreEleves}"
+                   id="nombreEleves"
+                   placeholder="nombreEleves"
+                   required>
+        </div>
+
+        <!-- Professeur-->
+        <div class="form-group">
+            <label for="professeur">Professeur</label>
+            <select id="professeur" name="professeur" required>
+                <option value="">-- Sélectionner un professeur --</option>
+                <option th:each="prof : ${professeur}"
+                        th:value="${prof.id}"
+                        th:text="${prof.prenom} + ' ' + ${prof.nom}"
+                        th:selected="${classe.professeur != null && classe.professeur.id == prof.id}">
+                </option>
+            </select>
+        </div>
+
+        <!-- ACTIONS -->
+
+        <div class="action">
+            <button type="submit">Enregistrer</button>
+            <a href="/"><button>Annuler</button></a>
+        </div>
+
+
+
+    </div>
+</form>
+
+
 </body>
 </html>

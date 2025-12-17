@@ -13,7 +13,7 @@ import java.util.Optional;
 public class ClassService {
 
     private ClassRepository classRepository;
-    private List<Classe> listeClass = new ArrayList<>();
+    private List<Classe> classes = new ArrayList<>();
 
     public ClassService(ClassRepository classRepository) {
         this.classRepository = classRepository;

@@ -20,15 +20,20 @@ public class ProfClassApp {
     @Bean
     CommandLineRunner commandLineRunner(ProfRepository profRepository, ClassRepository classRepository) {
         return args -> {
-            profRepository.save(new Professeur("Prof1", "Maxime", "maxime@gmail.com"));
-            profRepository.save(new Professeur("Prof2", "Tamara", "tamara@gmail.com"));
+            profRepository.save(new Professeur("Aumegeas", "Maxime", "maxime@gmail.com"));
+            profRepository.save(new Professeur("Cukon", "Tamara", "tamara@gmail.com"));
+            profRepository.save(new Professeur("Nfaidh", "Awatef", "awatef@gmail.com"));
 
-            Professeur professeur1 = profRepository.findById(1L).get();
-            Professeur professeur2 = profRepository.findById(2L).get();
 
-            classRepository.save(new Classe(23, "bac", "Math", "cls1",professeur1));
-            classRepository.save(new Classe(45, "bac+1", "francais", "cls2",professeur2));
-            classRepository.save(new Classe(12, "bac+2", "anglais", "cls3",professeur1));
+            Professeur Aumegeas = profRepository.findById(1L).get();
+            Professeur Cukon = profRepository.findById(2L).get();
+            Professeur Nfaidh = profRepository.findById(3L).get();
+
+            classRepository.save(new Classe(23, "Français", "Bac", "cls1",Aumegeas));
+            classRepository.save(new Classe(45, "Anglais", "Bts", "cls2", Nfaidh));
+            classRepository.save(new Classe(12, "Maths", "Bac", "cls3",Cukon));
+            classRepository.save(new Classe(15, "Maths", "Bac", "cls4",Cukon));
+            classRepository.save(new Classe(12, "Français", "Bac", "cls5",Aumegeas));
         };
     }
 }

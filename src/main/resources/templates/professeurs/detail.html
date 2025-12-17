@@ -7,14 +7,13 @@
 </head>
 <body>
 
-<div class="prof-form">
+<div class="prof-form"  >
+    <div id="entete-prof">
     <h1 th:text="${professeur.nom}"></h1>
-<div>
     <p th:text="${professeur.prenom}"></p>
-</div>
-    <div>
-        <p th:text="${professeur.email}"></p>
+    <p th:text="${professeur.email}"></p>
     </div>
+
     <div>
         <a href="/professeurs"><button>Retour</button></a>
         <a th:href="@{/professeurs/{id}/modifier(id=${professeur.id})}">
@@ -43,6 +42,14 @@
              <td th:text="${classe.matière}"></td>
              <td th:text="${classe.niveau}"></td>
              <td th:text="${classe.nom}"></td>
+         </tr>
+         <tr>
+              <div><th>Nombres total des classes enseignées</th></div>
+              <div><th>Nombre total des éleves</th></div>
+         </tr>
+         <tr>
+             <div><td th:text ="${nbreClassProf}"></td></div>
+             <div><td th:text ="${nbreEleveProf}"></td></div>
          </tr>
          </table>
      </div>

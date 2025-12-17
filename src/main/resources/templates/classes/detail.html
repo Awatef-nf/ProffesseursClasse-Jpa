@@ -7,5 +7,40 @@
 </head>
 <body>
 
+<div  class="prof-form">
+    <h1>Information sur la classe </h1>
+    <table class="prof-table">
+        <div>
+        <tr>
+            <div><th>Nom</th></div>
+            <div><th>Matière</th></div>
+            <div><th>Niveau</th></div>
+            <div><th>Nombre d'éleves</div>
+            <div><th>Professeurs</th></div>
+            <div><th>Email</th></div>
+        </tr>
+        <tr >
+            <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
+            <td><a th:text="${classe.matière}"></a></td>
+            <td><a th:text="${classe.niveau}"></a></td>
+            <td><a th:text="${classe.nombreEleves}"></a></td>
+            <td><a th:text="${classe.professeur.email}"></a></td>
+            <td><a th:href="@{/professeurs/{id}(id=${classe.professeur.id})}" th:text="${classe.professeur.nom}"></a></td>
+
+        </tr>
+            <tr>
+
+                <div class="action">
+                    <a href="javascript:history.back()"><button>Retour</button></a>
+                    <a th:href="@{classes/{id}/modifier(id=${classe.id})}"><button>Modifier</button></a>
+                    <a th:href="@{classes/{id}/suprimer(id=${classe.id})}"><button>Supprimer</button></a>
+                </div>
+
+            </tr>
+
+        </div>
+    </table>
+
+</div>
 </body>
 </html>

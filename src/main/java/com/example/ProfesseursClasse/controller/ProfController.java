@@ -23,17 +23,19 @@ public class ProfController {
         this.profService = profService;
     }
 
-   //vue pour tt les prof
+    //vue pour tt les prof
     @GetMapping
     public String getAllProf(Model model) {
         model.addAttribute("listeProfesseur", profService.getAllProf());
         return "professeurs/index";
     }
+
     //formulaire de creation
     @GetMapping("/nouveau")
     public String getForm(Model model) {
         model.addAttribute("professeur", new Professeur());
         return "/professeurs/formulaire";
+
     }
 
     //creer un nouveau professeur
@@ -47,8 +49,11 @@ public class ProfController {
     @GetMapping("/{id}")
     public String voirDetail(Model modelP, @PathVariable Long id) {
         modelP.addAttribute("professeur", profService.getProfById(id));
+        modelP.addAttribute("nbreClassProf",profService.nbreClassProf(id));
+        modelP.addAttribute("nbreEleveProf",profService.nbEleveProf(id));
         return "/professeurs/detail";
     }
+
     //modifier formulaire par id
     @GetMapping("/{id}/modifier")
     public String modifierProf(@PathVariable Long id, Model modelP) {
@@ -62,18 +67,19 @@ public class ProfController {
     }
 
     @PostMapping("/{id}/modifier")
-    public String modifierProf(@ModelAttribute Professeur professeur,Model modelP) {
-            profService.modifierProf(professeur);
-            return "redirect:/professeurs";
+    public String modifierProf(@ModelAttribute Professeur professeur, Model modelP) {
+        profService.modifierProf(professeur);
+        return "redirect:/professeurs";
     }
 
-  //effacer un professeur
+    //effacer un professeur
 
     @GetMapping("/{id}/supprimer")
-    public String supprimerProf(@PathVariable int id) {
+    public String supprimerProf(@PathVariable Long id) {
         profService.supprimerProfById(id);
         return "redirect:/professeurs";
     }
+
 
     }
 
