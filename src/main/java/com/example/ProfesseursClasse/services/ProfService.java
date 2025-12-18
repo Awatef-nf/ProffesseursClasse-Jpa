@@ -63,7 +63,7 @@ public class ProfService {
         } return count;
     }
     public List<Professeur> getProfesseursTriesParNom() {
-        return profRepository.findAllByOrderByNomAsc();
+        return profRepository.findAllByOrderByNom();
     }
 
 

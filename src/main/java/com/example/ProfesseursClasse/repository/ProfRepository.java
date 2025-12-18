@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ProfRepository extends JpaRepository<Professeur, Long> {
 
-    List<Professeur> findAllByOrderByNomAsc();
+    List<Professeur> findAllByOrderByNom();
 }
