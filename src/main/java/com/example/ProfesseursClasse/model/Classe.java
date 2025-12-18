@@ -17,18 +17,10 @@ public class Classe {
     @JoinColumn(name= "professeur_id")
     @JsonBackReference
     private Professeur professeur;
-    @Transient
 
 
-    public String getCouleurMatiere() {
-        switch (matière) {
-            case "Mathématiques": return "#1E90FF";
-            case "Français": return "#32CD32";
-            case "Anglais": return "#FF4500";
-            case "Sport": return "#8A2BE2";
-            default: return "#6c757d"; // gris
-        }
-    }
+
+
     public Classe() {
     }
 
@@ -40,6 +32,17 @@ public class Classe {
         this.professeur=professeur;
     }
 
+
+    @Transient
+    public String getCouleurMatiere() {
+        switch (matière) {
+            case "Mathématiques": return "#1E90FF";
+            case "Français": return "#32CD32";
+            case "Anglais": return "#FF4500";
+            case "Sport": return "#8A2BE2";
+            default: return "#6c757d"; // gris
+        }
+    }
     public String getNom() {
         return nom;
     }

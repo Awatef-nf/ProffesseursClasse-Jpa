@@ -9,16 +9,11 @@
 
 <div class="prof-form"  >
     <div>
-      <div>
+      <div class="entete">
          <h1 th:text="${professeur.nom}"></h1>
-      </div>
-      <div>
          <h1 th:text="${professeur.prenom}"></h1>
       </div>
-    </div>
-
-    <div>
-    <p th:text="${professeur.email}"></p>
+        <p th:text="${professeur.email}"></p>
     </div>
 
     <div>
@@ -50,7 +45,7 @@
                     th:text="${classe.matière}"
                     th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
              <td th:text="${classe.niveau}"></td>
-             <td th:text="${classe.nom}"></td>
+             <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
          </tr>
          <tr>
               <div><th>Nombres total des classes enseignées</th></div>

@@ -20,7 +20,7 @@
             <div><th>Email</th></div>
         </tr>
         <tr >
-            <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
+            <td><a th:text="${classe.nom}"></a></td>
             <td><a class="badge-matiere"
                           th:text="${classe.matière}"
                           th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
