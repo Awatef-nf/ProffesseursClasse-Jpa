@@ -21,7 +21,7 @@
 
 <div class="prof-form">
     <div>
-        <div class="prof-form">
+        <div>
             <h1 id="classedispo">Liste des Classes</h1>
         </div>
         <div>
@@ -31,6 +31,7 @@
                 <div><th>Nom</th></div>
                 <div><th>Matière</th></div>
                 <div><th>Professeurs</th></div>
+                <div><th>Action</th></div>
                 </tr>
                 <tr th:each="classe: ${listeClass}">
                     <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>

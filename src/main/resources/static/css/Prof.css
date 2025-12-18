@@ -1,7 +1,7 @@
 /* ================= BASE ================= */
 body {
 
-       /*background-image: url("/image/img.png")!important;*/
+       background-image: url("/image/img.png")!important;
        background-repeat: no-repeat;
        background-size: cover;
        background-color: #d2a37c;
@@ -10,8 +10,8 @@ body {
 
 .prof-form {
     max-width: 700px;
-    margin: 32px auto;
-    background: #c0d1db;
+    margin: 82px auto;
+    background: #e6eef3;
     padding: 40px;
     border-radius: 14px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
@@ -121,14 +121,14 @@ button:hover {
 }
 
 .prof-table th {
-    text-align: left;
+    text-align: center;
     padding: 8px;
     border-bottom: 2px solid;
 }
 
 .prof-table td {
     padding: 8px;
-
+     text-align: center;
     border-bottom: 2px solid;
 }
 

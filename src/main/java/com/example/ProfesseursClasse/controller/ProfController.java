@@ -23,12 +23,18 @@ public class ProfController {
         this.profService = profService;
     }
 
+    @GetMapping("/aceuil")
+    public String getAllProf() {
+        return "aceuil/aceuil";
+    }
     //vue pour tt les prof
     @GetMapping
     public String getAllProf(Model model) {
-        model.addAttribute("listeProfesseur", profService.getAllProf());
+        model.addAttribute("listeProfesseur", profService.getProfesseursTriesParNom());
         return "professeurs/index";
     }
+
+
 
     //formulaire de creation
     @GetMapping("/nouveau")
