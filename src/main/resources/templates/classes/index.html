@@ -11,8 +11,8 @@
     <div class="prof-form">
         <h1 id="prof">Gestion des classes</h1>
         <div class="action">
-        <a href="/classes/nouveau">Créer une classe</a>
-        <a href="/professeurs">Voir les professeurs</a>
+            <a href="/classes/nouveau"><button>Créer une classe</button></a>
+            <a href="/professeurs"><button>Voir les professeurs</button></a>
         </div>
 
     </div>
@@ -29,13 +29,16 @@
                 <tr>
 
                 <div><th>Nom</th></div>
+                <div><th>Matière</th></div>
                 <div><th>Professeurs</th></div>
                 </tr>
                 <tr th:each="classe: ${listeClass}">
                     <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
+                    <td><a class="badge-matiere"
+                           th:text="${classe.matière}"
+                           th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
                     <td><a th:href="@{/professeurs/{id}(id=${classe.professeur.id})}" th:text="${classe.professeur.nom}"></a></td>
                     <td class="action">
-                        <a href="javascript:history.back()"><button>Retour</button></a>
                         <a th:href="@{classes/{id}/modifier(id=${classe.id})}"><button>Modifier</button></a>
                         <a th:href="@{classes/{id}/suprimer(id=${classe.id})}"><button>Supprimer</button></a>
                     </td>

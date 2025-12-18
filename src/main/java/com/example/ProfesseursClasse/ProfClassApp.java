@@ -31,8 +31,8 @@ public class ProfClassApp {
 
             classRepository.save(new Classe(23, "Français", "Bac", "cls1",Aumegeas));
             classRepository.save(new Classe(45, "Anglais", "Bts", "cls2", Nfaidh));
-            classRepository.save(new Classe(12, "Maths", "Bac", "cls3",Cukon));
-            classRepository.save(new Classe(15, "Maths", "Bac", "cls4",Cukon));
+            classRepository.save(new Classe(12, "Mathématiques", "Bac", "cls3",Cukon));
+            classRepository.save(new Classe(15, "Mathématiques", "Bac", "cls4",Cukon));
             classRepository.save(new Classe(12, "Français", "Bac", "cls5",Aumegeas));
         };
     }

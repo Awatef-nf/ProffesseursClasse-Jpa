@@ -10,7 +10,7 @@
 <div class="prof-form"  >
     <div id="entete-prof">
     <h1 th:text="${professeur.nom}"></h1>
-    <p th:text="${professeur.prenom}"></p>
+    <h1 th:text="${professeur.prenom}"></h1>
     <p th:text="${professeur.email}"></p>
     </div>
 
@@ -39,7 +39,9 @@
          <tr th:each="classe : ${professeur.classes}">
              <td th:text="${classe.id}"></td>
              <td th:text="${classe.nombreEleves}"></td>
-             <td th:text="${classe.matière}"></td>
+             <td><a class="badge-matiere"
+                    th:text="${classe.matière}"
+                    th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
              <td th:text="${classe.niveau}"></td>
              <td th:text="${classe.nom}"></td>
          </tr>

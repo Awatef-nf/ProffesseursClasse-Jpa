@@ -21,7 +21,9 @@
         </tr>
         <tr >
             <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
-            <td><a th:text="${classe.matière}"></a></td>
+            <td><a class="badge-matiere"
+                          th:text="${classe.matière}"
+                          th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
             <td><a th:text="${classe.niveau}"></a></td>
             <td><a th:text="${classe.nombreEleves}"></a></td>
             <td><a th:text="${classe.professeur.email}"></a></td>
@@ -32,8 +34,8 @@
 
                 <div class="action">
                     <a href="javascript:history.back()"><button>Retour</button></a>
-                    <a th:href="@{classes/{id}/modifier(id=${classe.id})}"><button>Modifier</button></a>
-                    <a th:href="@{classes/{id}/suprimer(id=${classe.id})}"><button>Supprimer</button></a>
+                    <a th:href="@{{id}/modifier(id=${classe.id})}"><button>Modifier</button></a>
+                    <a th:href="@{{id}/suprimer(id=${classe.id})}"><button>Supprimer</button></a>
                 </div>
 
             </tr>
