@@ -34,14 +34,15 @@
                 <div><th>Action</th></div>
                 </tr>
                 <tr th:each="classe: ${listeClass}">
-                    <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
+                    <td th:text="${classe.nom}"></td>
                     <td><a class="badge-matiere"
                            th:text="${classe.matière}"
                            th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
                     <td><a th:href="@{/professeurs/{id}(id=${classe.professeur.id})}" th:text="${classe.professeur.nom}"></a></td>
                     <td class="action">
+                        <a th:href="@{/classes/{id}(id=${classe.id})}"><button>Detail</button></a>
                         <a th:href="@{classes/{id}/modifier(id=${classe.id})}"><button>Modifier</button></a>
-                        <a th:href="@{classes/{id}/suprimer(id=${classe.id})}"><button>Supprimer</button></a>
+                        <a th:href="@{classes/{id}/suprimer(id=${classe.id})}"><button class="supprimer">Supprimer</button></a>
                     </td>
                 </tr>
             </table>

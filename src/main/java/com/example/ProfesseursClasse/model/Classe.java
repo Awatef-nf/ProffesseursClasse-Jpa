@@ -38,8 +38,9 @@ public class Classe {
         switch (matière) {
             case "Mathématiques": return "#1E90FF";
             case "Français": return "#32CD32";
-            case "Anglais": return "#FF4500";
+            case "Informatique": return "#FF4500";
             case "Sport": return "#8A2BE2";
+            case "Sience": return "#e55f9d";
             default: return "#6c757d"; // gris
         }
     }

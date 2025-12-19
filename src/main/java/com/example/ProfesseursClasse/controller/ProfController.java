@@ -57,6 +57,7 @@ public class ProfController {
         modelP.addAttribute("professeur", profService.getProfById(id));
         modelP.addAttribute("nbreClassProf",profService.nbreClassProf(id));
         modelP.addAttribute("nbreEleveProf",profService.nbEleveProf(id));
+        modelP.addAttribute("moyElvProf",profService.moyElevProf(id));
         return "/professeurs/detail";
     }
 

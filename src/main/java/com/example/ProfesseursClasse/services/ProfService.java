@@ -60,10 +60,22 @@ public class ProfService {
         for(Classe classe : nbElveProf.getClasses() )
         {
             count += classe.getNombreEleves();
-        } return count;
+        }
+        return count;
     }
+
+    //trier les professeurs par nom
     public List<Professeur> getProfesseursTriesParNom() {
         return profRepository.findAllByOrderByNom();
+    }
+
+    //la moyenne de nb éleves par professeur
+    public int  moyElevProf(Long id)
+    {
+        int moy =0;
+        int nbEleve = this.nbEleveProf(id);
+        int nbclprof= this.nbreClassProf(id);
+        return moy=nbEleve/nbclprof;
     }
 
 

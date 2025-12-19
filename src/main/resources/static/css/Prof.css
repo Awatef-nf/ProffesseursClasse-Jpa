@@ -92,6 +92,10 @@ button:hover {
     background-color: #ae9969;
 }
 
+.supprimer:hover{
+background-color:red;
+
+}
 
 /********la table*********/
 .prof-form h2 {
@@ -124,6 +128,7 @@ button:hover {
     text-align: center;
     padding: 8px;
     border-bottom: 2px solid;
+
 }
 
 .prof-table td {

@@ -26,8 +26,8 @@
                           th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
             <td><a th:text="${classe.niveau}"></a></td>
             <td><a th:text="${classe.nombreEleves}"></a></td>
-            <td><a th:text="${classe.professeur.email}"></a></td>
             <td><a th:href="@{/professeurs/{id}(id=${classe.professeur.id})}" th:text="${classe.professeur.nom}"></a></td>
+            <td><a th:text="${classe.professeur.email}"></a></td>
 
         </tr>
             <tr>

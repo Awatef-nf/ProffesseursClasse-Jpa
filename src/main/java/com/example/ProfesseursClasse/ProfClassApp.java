@@ -23,17 +23,20 @@ public class ProfClassApp {
             profRepository.save(new Professeur("Aumegeas", "Maxime", "maxime@gmail.com"));
             profRepository.save(new Professeur("Cukon", "Tamara", "tamara@gmail.com"));
             profRepository.save(new Professeur("Nfaidh", "Awatef", "awatef@gmail.com"));
+            profRepository.save(new Professeur("Bare", "Esteban", "esteban@gmail.com"));
 
 
             Professeur Aumegeas = profRepository.findById(1L).get();
             Professeur Cukon = profRepository.findById(2L).get();
             Professeur Nfaidh = profRepository.findById(3L).get();
+            Professeur Bare = profRepository.findById(4L).get();
 
             classRepository.save(new Classe(23, "Français", "Bac", "cls1",Aumegeas));
             classRepository.save(new Classe(45, "Anglais", "Bts", "cls2", Nfaidh));
             classRepository.save(new Classe(12, "Mathématiques", "Bac", "cls3",Cukon));
             classRepository.save(new Classe(15, "Mathématiques", "Bac", "cls4",Cukon));
             classRepository.save(new Classe(12, "Français", "Bac", "cls5",Aumegeas));
+            classRepository.save(new Classe(23, "Informatique", "Bac", "cls6",Bare));
         };
     }
 }
