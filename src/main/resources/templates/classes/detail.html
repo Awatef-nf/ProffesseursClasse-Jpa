@@ -26,14 +26,14 @@
                           th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
             <td><a th:text="${classe.niveau}"></a></td>
             <td><a th:text="${classe.nombreEleves}"></a></td>
-            <td><a th:href="@{/professeurs/{id}(id=${classe.professeur.id})}" th:text="${classe.professeur.nom}"></a></td>
+            <td><a class="lien-color" th:href="@{/professeurs/{id}(id=${classe.professeur.id})}" th:text="${classe.professeur.nom}"></a></td>
             <td><a th:text="${classe.professeur.email}"></a></td>
 
         </tr>
             <tr>
 
                 <div class="action">
-                    <a href="javascript:history.back()"><button>Retour</button></a>
+                    <button type="button" onclick="window.location.href='javascript:history.back()'">Annuler</button>
                     <a th:href="@{{id}/modifier(id=${classe.id})}"><button>Modifier</button></a>
                     <a th:href="@{{id}/suprimer(id=${classe.id})}"><button>Supprimer</button></a>
                 </div>

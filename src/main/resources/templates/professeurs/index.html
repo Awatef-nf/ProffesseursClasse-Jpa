@@ -10,8 +10,9 @@
     <div class="prof-form">
         <h1>Gestion des professeurs</h1>
         <div class="action">
-            <a href="/professeurs/nouveau"><button>Créer un professeurs</button></a>
-            <a href="/classes"><button>Voir les classes</button></a>
+            <a href="/professeurs/nouveau"><button class="action-entete">Créer un professeurs</button></a>
+            <a href="/classes"><button class="action-entete">Voir les classes</button></a>
+            <a href="/"><button class="action-entete">Accueil</button></a>
         </div>
     </div>
 </header>
@@ -40,8 +41,13 @@
                         <a th:href="@{professeurs/{id}/supprimer(id=${professeur.id})}"><button class="supprimer">Supprimer</button></a>
                     </td>
                 </tr>
+                <tr>
+                    <div><th>Nombre total de professeurs</th></div>
+                </tr>
+                <tr>
+                    <div><td th:text ="${nbprof}"></td></div>
+                </tr>
             </table>
-
         </div>
     </div>
 </div>

@@ -31,6 +31,7 @@ public class ProfController {
     @GetMapping
     public String getAllProf(Model model) {
         model.addAttribute("listeProfesseur", profService.getProfesseursTriesParNom());
+        model.addAttribute("nbprof",profService.nbreProf());
         return "professeurs/index";
     }
 
@@ -58,6 +59,7 @@ public class ProfController {
         modelP.addAttribute("nbreClassProf",profService.nbreClassProf(id));
         modelP.addAttribute("nbreEleveProf",profService.nbEleveProf(id));
         modelP.addAttribute("moyElvProf",profService.moyElevProf(id));
+
         return "/professeurs/detail";
     }
 

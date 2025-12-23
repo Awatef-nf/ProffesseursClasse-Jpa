@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/Prof.css}">
 </head>
 <body>
-
+<!------------------l'entete --------------->
 <div class="prof-form"  >
     <div>
       <div class="entete">
@@ -17,7 +17,7 @@
     </div>
 
     <div>
-        <a href="/professeurs"><button>Retour</button></a>
+        <button type="button" onclick="window.location.href='javascript:history.back()'">Annuler</button>
         <a th:href="@{/professeurs/{id}/modifier(id=${professeur.id})}">
             <button>Modifier</button>
         </a>
@@ -25,7 +25,7 @@
             <button>Supprimer</button>
         </a>
     </div>
-    <!--- lister les classes du proff-->
+    <!-----------lister les classes du proff------------>
 
      <div>
          <h1>Classes enseignées</h1>
@@ -45,20 +45,27 @@
                     th:text="${classe.matière}"
                     th:style="'background-color:' + ${classe.couleurMatiere}"></a></td>
              <td th:text="${classe.niveau}"></td>
-             <td><a th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
-         </tr>
-         <tr>
-              <div><th>Nombres total des classes enseignées</th></div>
-              <div><th>Nombre total des éleves</th></div>
-             <div><th>Moyenne de nombres d'éléves</th></div>
-         </tr>
-         <tr>
-             <div><td th:text ="${nbreClassProf}"></td></div>
-             <div><td th:text ="${nbreEleveProf}"></td></div>
-             <div><td th:text ="${moyElvProf}"></td></div>
+             <td><a  class="lien-color" th:href="@{/classes/{id}(id=${classe.id})}" th:text="${classe.nom}"></a></td>
          </tr>
          </table>
      </div>
+<!----------------------- Statisque---------------------->
+         <div>
+             <h1>Statisques</h1>
+             <table class="prof-table">
+            <tr>
+              <div><th>Nombres total des classes enseignées</th></div>
+              <div><th>Nombre total des éleves</th></div>
+             <div><th>Moyenne de nombres d'éléves</th></div>
+            </tr>
+            <tr>
+             <div><td th:text ="${nbreClassProf}"></td></div>
+             <div><td th:text ="${nbreEleveProf}"></td></div>
+             <div><td th:text ="${moyElvProf}"></td></div>
+            </tr>
+           </table>
+         </div>
+
 
 </div>
 </body>

@@ -73,11 +73,19 @@ public class ProfService {
     public int  moyElevProf(Long id)
     {
         int moy =0;
-        int nbEleve = this.nbEleveProf(id);
-        int nbclprof= this.nbreClassProf(id);
-        return moy=nbEleve/nbclprof;
+            int nbEleve = this.nbEleveProf(id);
+            int nbclprof = this.nbreClassProf(id);
+            if(nbclprof == 0)
+            {
+                return 0;
+            }
+
+        return   moy = nbEleve / nbclprof;
     }
 
-
+    public int nbreProf()
+    {
+        return getAllProf().size();
+    }
 
 }
